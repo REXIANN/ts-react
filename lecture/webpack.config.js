@@ -3,9 +3,9 @@ const webpack = require('webpack');
 
 module.exports = {
     mode: 'development', // production
-    devtool: 'eval', // hidden-source-map
+    devtool: 'eval', //hidden-source-map
     resolve: {
-        extensions: ['.jsx', '.js', '.tsx', '.ts'],
+        extensions: ['.jsx', '.js', '.tsx', '.ts']
     },
 
     entry: {
@@ -14,13 +14,15 @@ module.exports = {
     module: {
         rules: [{
             test: /\.tsx?$/,
-            loader: 'awesome-typescript-loader',
+            loader: 'ts-loader',
         }]
     },
-    plugins: [],
+    plugins: [
+
+    ],
     output: {
-        filename: 'app.js',
+        filename: '[name].js',
         path: path.join(__dirname, 'dist'),
-        publicPath: '/dist',
     }
+
 }
